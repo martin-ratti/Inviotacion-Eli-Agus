@@ -26,7 +26,7 @@
     <span class="petal" style="left: 85%; animation-duration: 15s; animation-delay: 8s;"></span>
   </div>
 
-  <!-- ============ HERO ============ -->
+  <!-- ============ 1. HERO ("Nos casamos") ============ -->
   <section class="relative min-h-screen flex flex-col items-center justify-center px-6 text-center overflow-hidden">
     <!-- Decorative arch SVG -->
     <svg class="arch arch-svg" viewBox="0 0 400 800" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
@@ -64,7 +64,7 @@
       <h1 class="name-script text-terradark text-7xl sm:text-8xl mb-10">Eliana</h1>
 
       <p class="font-serif italic text-ink/70 text-lg mb-2">Sábado</p>
-      <p class="font-serif text-2xl tracking-[0.3em] text-ink uppercase mb-2">20 · Febrero · 2027</p>
+      <p class="font-serif text-2xl tracking-[0.3em] text-ink uppercase mb-2">06 · Marzo · 2027</p>
       <p class="font-sans text-xs tracking-[0.3em] text-clay uppercase">Arequito · Santa Fe</p>
     </div>
 
@@ -79,31 +79,7 @@
     </div>
   </section>
 
-  <!-- ============ COUNTDOWN ============ -->
-  <section class="relative px-6 py-20 text-center fade-in">
-    <p class="font-script text-3xl text-terradark mb-2">¡Falta poco!</p>
-    <p class="font-serif italic text-ink/60 mb-8">Cuenta regresiva</p>
-    <div class="grid grid-cols-4 gap-3 max-w-md mx-auto">
-      <div class="count-box rounded-xl py-4 px-2">
-        <div id="cd-days" class="font-serif text-3xl text-terradark">--</div>
-        <div class="font-sans text-[10px] tracking-widest text-clay uppercase mt-1">Días</div>
-      </div>
-      <div class="count-box rounded-xl py-4 px-2">
-        <div id="cd-hours" class="font-serif text-3xl text-terradark">--</div>
-        <div class="font-sans text-[10px] tracking-widest text-clay uppercase mt-1">Horas</div>
-      </div>
-      <div class="count-box rounded-xl py-4 px-2">
-        <div id="cd-mins" class="font-serif text-3xl text-terradark">--</div>
-        <div class="font-sans text-[10px] tracking-widest text-clay uppercase mt-1">Min</div>
-      </div>
-      <div class="count-box rounded-xl py-4 px-2">
-        <div id="cd-secs" class="font-serif text-3xl text-terradark">--</div>
-        <div class="font-sans text-[10px] tracking-widest text-clay uppercase mt-1">Seg</div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ NUESTRA HISTORIA ============ -->
+  <!-- ============ 2. NUESTRA HISTORIA ============ -->
   <section class="relative px-6 py-16 text-center fade-in">
     <div class="divider-leaf max-w-xs mx-auto mb-6">
       <svg width="22" height="22" viewBox="0 0 22 22"><path d="M11 2 Q 16 11, 11 20 Q 6 11, 11 2 Z" fill="#9caa8b" opacity="0.7"/></svg>
@@ -125,39 +101,182 @@
     </div>
   </section>
 
-  <!-- ============ FIESTA ============ -->
+  <!-- ============ 3. CUANDO Y DONDE ============ -->
   <section class="relative px-6 py-16 fade-in">
     <div class="text-center mb-12">
-      <p class="font-sans text-xs tracking-[0.4em] text-clay uppercase mb-2">Cuándo & Dónde</p>
-      <h2 class="font-script text-4xl text-terradark">La fiesta</h2>
+      <p class="font-sans text-xs tracking-[0.4em] text-clay uppercase mb-2">Detalles del evento</p>
+      <h2 class="font-script text-4xl text-terradark">Cuándo & Dónde</h2>
     </div>
 
     <div class="max-w-md mx-auto">
-      <div class="card-boho p-8 text-center">
+      <div class="card-boho p-8 text-center shadow-sm">
         <svg width="48" height="48" viewBox="0 0 40 40" class="mx-auto mb-4">
           <path d="M8 32 Q 20 28, 32 32 L 32 36 L 8 36 Z" fill="#9caa8b" opacity="0.5"/>
           <path d="M14 28 Q 20 8, 26 28" fill="none" stroke="#c08566" stroke-width="1.2"/>
           <path d="M16 16 L 24 16 M 18 22 L 22 22" stroke="#9c684f" stroke-width="1"/>
         </svg>
-        <p class="font-sans text-xs tracking-[0.3em] text-clay uppercase mb-2">Te esperamos</p>
-        <h3 class="font-serif text-3xl text-ink mb-1">21:00 hs</h3>
-        <p class="font-serif italic text-ink/70 mb-4">Sábado 20 de Febrero</p>
+        
+        <p class="font-sans text-xs tracking-[0.3em] text-clay uppercase mb-2">Sábado 6 de Marzo de 2027</p>
+        
+        <div class="flex justify-center items-center gap-6 my-4">
+          <div>
+            <p class="font-sans text-[10px] tracking-widest text-clay/70 uppercase">Ceremonia</p>
+            <h3 class="font-serif text-2xl text-ink font-semibold">20:00 hs</h3>
+          </div>
+          <div class="w-[1px] h-8 bg-terra/25"></div>
+          <div>
+            <p class="font-sans text-[10px] tracking-widest text-clay/70 uppercase">Fiesta</p>
+            <h3 class="font-serif text-2xl text-ink font-semibold">21:00 hs</h3>
+          </div>
+        </div>
+
         <div class="divider-leaf max-w-[140px] mx-auto my-4">
           <svg width="14" height="14" viewBox="0 0 22 22"><path d="M11 2 Q 16 11, 11 20 Q 6 11, 11 2 Z" fill="#9caa8b" opacity="0.7"/></svg>
         </div>
-        <p class="font-serif text-xl text-terradark mb-2">Salón a confirmar</p>
+
+        <p class="font-serif text-xl text-terradark mb-1">Salón Chico de 9 de Julio</p>
         <p class="font-sans text-sm text-ink/70 leading-relaxed">Arequito<br/>Santa Fe, Argentina</p>
         <a href="https://maps.google.com/?q=Arequito+Santa+Fe" target="_blank" class="btn-outline mt-6">Ver mapa</a>
       </div>
     </div>
   </section>
 
-  <!-- ============ RSVP ============ -->
+  <!-- ============ 4. TIMELINE DE LA FIESTA / MENU ============ -->
+  <section class="relative px-6 py-16 fade-in bg-sand/20">
+    <div class="text-center mb-12">
+      <p class="font-sans text-xs tracking-[0.4em] text-clay uppercase mb-2">Cronograma</p>
+      <h2 class="font-script text-4xl text-terradark">Timeline & Menú</h2>
+    </div>
+
+    <div class="max-w-md mx-auto relative px-4">
+      <!-- Vertical line -->
+      <div class="timeline-line"></div>
+
+      <!-- Timeline item 1 -->
+      <div class="relative flex gap-6 mb-10 items-start">
+        <div class="timeline-dot">
+          <span class="font-serif text-xs font-semibold">01</span>
+        </div>
+        <div class="pt-1">
+          <span class="font-sans text-[10px] tracking-widest text-clay uppercase font-medium">20:00 hs</span>
+          <h4 class="font-serif text-lg text-ink font-medium">La Ceremonia</h4>
+          <p class="font-sans text-xs text-ink/70 mt-1">Daremos el sí formal y compartiremos nuestra unión frente a todos ustedes.</p>
+        </div>
+      </div>
+
+      <!-- Timeline item 2 -->
+      <div class="relative flex gap-6 mb-10 items-start">
+        <div class="timeline-dot">
+          <span class="font-serif text-xs font-semibold">02</span>
+        </div>
+        <div class="pt-1">
+          <span class="font-sans text-[10px] tracking-widest text-clay uppercase font-medium">20:30 hs</span>
+          <h4 class="font-serif text-lg text-ink font-medium">Recepción & Bienvenida</h4>
+          <p class="font-sans text-xs text-ink/70 mt-1">Comenzamos la celebración en los jardines con una propuesta de tragos y appetizers.</p>
+        </div>
+      </div>
+
+      <!-- Timeline item 3 -->
+      <div class="relative flex gap-6 mb-10 items-start">
+        <div class="timeline-dot">
+          <span class="font-serif text-xs font-semibold">03</span>
+        </div>
+        <div class="pt-1">
+          <span class="font-sans text-[10px] tracking-widest text-clay uppercase font-medium">21:30 hs</span>
+          <h4 class="font-serif text-lg text-ink font-medium">Entrada</h4>
+          <p class="font-sans text-xs text-ink/70 mt-1">Una propuesta gastronómica especial para dar inicio a la cena formal en el salón.</p>
+        </div>
+      </div>
+
+      <!-- Timeline item 4 -->
+      <div class="relative flex gap-6 mb-10 items-start">
+        <div class="timeline-dot">
+          <span class="font-serif text-xs font-semibold">04</span>
+        </div>
+        <div class="pt-1">
+          <span class="font-sans text-[10px] tracking-widest text-clay uppercase font-medium">22:30 hs</span>
+          <h4 class="font-serif text-lg text-ink font-medium">Plato Principal</h4>
+          <p class="font-sans text-xs text-ink/70 mt-1">Plato principal caliente especialmente seleccionado por los novios.</p>
+        </div>
+      </div>
+
+      <!-- Timeline item 5 -->
+      <div class="relative flex gap-6 mb-10 items-start">
+        <div class="timeline-dot">
+          <span class="font-serif text-xs font-semibold">05</span>
+        </div>
+        <div class="pt-1">
+          <span class="font-sans text-[10px] tracking-widest text-clay uppercase font-medium">23:30 hs</span>
+          <h4 class="font-serif text-lg text-ink font-medium">Postre & Brindis</h4>
+          <p class="font-sans text-xs text-ink/70 mt-1">Cerramos la propuesta gastronómica con algo dulce para dar paso al brindis oficial.</p>
+        </div>
+      </div>
+
+      <!-- Timeline item 6 -->
+      <div class="relative flex gap-6 items-start">
+        <div class="timeline-dot">
+          <span class="font-serif text-xs font-semibold">06</span>
+        </div>
+        <div class="pt-1">
+          <span class="font-sans text-[10px] tracking-widest text-clay uppercase font-medium">00:00 hs</span>
+          <h4 class="font-serif text-lg text-ink font-medium">Fiesta & Mesa Dulce</h4>
+          <p class="font-sans text-xs text-ink/70 mt-1">Se abre la pista de baile, barra de tragos y la gran mesa de dulces para festejar hasta el amanecer.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 5. PRECIO DE LA TARJETA ============ -->
   <section class="relative px-6 py-16 fade-in">
-    <div class="card-boho p-8 max-w-md mx-auto text-center">
+    <div class="text-center mb-8">
+      <p class="font-sans text-xs tracking-[0.4em] text-clay uppercase mb-2">Valor de la tarjeta</p>
+      <h2 class="font-script text-4xl text-terradark">Tarjetas & Valores</h2>
+    </div>
+
+    <div class="max-w-md mx-auto grid grid-cols-2 gap-4">
+      <div class="card-boho p-6 text-center">
+        <p class="font-sans text-xs tracking-widest text-clay uppercase mb-1">Mayores</p>
+        <p class="font-serif text-2xl text-terradark font-semibold my-2">$ A confirmar</p>
+        <p class="font-sans text-[10px] text-ink/60 italic">Valor general</p>
+      </div>
+      <div class="card-boho p-6 text-center">
+        <p class="font-sans text-xs tracking-widest text-clay uppercase mb-1">Menores</p>
+        <p class="font-serif text-2xl text-terradark font-semibold my-2">$ A confirmar</p>
+        <p class="font-sans text-[10px] text-ink/60 italic">Niños (hasta 10 años)</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 6. CUENTA REGRESIVA ============ -->
+  <section class="relative px-6 py-20 text-center fade-in bg-cream">
+    <p class="font-script text-3xl text-terradark mb-2">¡Falta poco!</p>
+    <p class="font-serif italic text-ink/60 mb-8">Cuenta regresiva para el gran día</p>
+    <div class="grid grid-cols-4 gap-3 max-w-md mx-auto">
+      <div class="count-box rounded-xl py-4 px-2">
+        <div id="cd-days" class="font-serif text-3xl text-terradark font-semibold">--</div>
+        <div class="font-sans text-[10px] tracking-widest text-clay uppercase mt-1">Días</div>
+      </div>
+      <div class="count-box rounded-xl py-4 px-2">
+        <div id="cd-hours" class="font-serif text-3xl text-terradark font-semibold">--</div>
+        <div class="font-sans text-[10px] tracking-widest text-clay uppercase mt-1">Horas</div>
+      </div>
+      <div class="count-box rounded-xl py-4 px-2">
+        <div id="cd-mins" class="font-serif text-3xl text-terradark font-semibold">--</div>
+        <div class="font-sans text-[10px] tracking-widest text-clay uppercase mt-1">Min</div>
+      </div>
+      <div class="count-box rounded-xl py-4 px-2">
+        <div id="cd-secs" class="font-serif text-3xl text-terradark font-semibold">--</div>
+        <div class="font-sans text-[10px] tracking-widest text-clay uppercase mt-1">Seg</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 7. CONFIRMA ASISTENCIA (RSVP) ============ -->
+  <section class="relative px-6 py-16 fade-in">
+    <div class="card-boho p-8 max-w-md mx-auto text-center shadow-sm">
       <p class="font-sans text-xs tracking-[0.4em] text-clay uppercase mb-2">Confirmá tu asistencia</p>
       <h2 class="font-script text-4xl text-terradark mb-2">¿Venís?</h2>
-      <p class="font-serif italic text-ink/70 mb-6">Necesitamos saberlo antes del 1 de noviembre.</p>
+      <p class="font-serif italic text-ink/70 mb-6">Agradecemos confirmar tu asistencia antes del 1 de noviembre.</p>
 
       <form id="rsvp-form" class="space-y-3 text-left">
         <input type="text" placeholder="Nombre y apellido" class="input-boho" required />
@@ -168,22 +287,22 @@
     </div>
   </section>
 
-  <!-- ============ REGALO ============ -->
-  <section class="relative px-6 py-16 text-center fade-in">
+  <!-- ============ 8. DATOS DE TRANSFERENCIA (ALIAS Y CBU) ============ -->
+  <section class="relative px-6 py-16 text-center fade-in bg-sand/10">
     <div class="divider-leaf max-w-xs mx-auto mb-6">
       <svg width="22" height="22" viewBox="0 0 22 22"><path d="M11 2 Q 16 11, 11 20 Q 6 11, 11 2 Z" fill="#9caa8b" opacity="0.7"/></svg>
     </div>
-    <p class="font-sans text-xs tracking-[0.4em] text-clay uppercase mb-2">Regalo</p>
-    <h2 class="font-script text-4xl text-terradark mb-4">Si querés regalarnos algo…</h2>
+    <p class="font-sans text-xs tracking-[0.4em] text-clay uppercase mb-2">Pago de la tarjeta</p>
+    <h2 class="font-script text-4xl text-terradark mb-4">Confirmación de Pago</h2>
     <p class="font-serif italic text-ink/70 max-w-md mx-auto mb-8 leading-relaxed">
-      Tu presencia es nuestro mejor regalo. Pero si querés colaborar con nuestra luna de miel:
+      Para hacer efectivo el valor de la tarjeta y ayudarnos con la organización del evento, te facilitamos nuestra cuenta bancaria para realizar la transferencia:
     </p>
-    <div class="card-boho p-6 max-w-sm mx-auto">
-      <p class="font-sans text-xs tracking-widest text-clay uppercase mb-2">Alias</p>
-      <p class="font-serif text-2xl text-terradark mb-4">agus.eli.casamiento</p>
+    <div class="card-boho p-6 max-w-sm mx-auto shadow-sm">
+      <p class="font-sans text-xs tracking-widest text-clay uppercase mb-2">Alias de la tarjeta</p>
+      <p class="font-serif text-xl text-terradark font-medium mb-4">cbu.tarjeta.agus.eli</p>
       <p class="font-sans text-xs tracking-widest text-clay uppercase mb-2">CBU</p>
-      <p class="font-mono text-sm text-ink/80 break-all">0000000000000000000000</p>
-      <button id="copy-alias-btn" class="btn-outline mt-5">Copiar alias</button>
+      <p class="font-mono text-xs text-ink/80 break-all bg-cream/50 p-2 rounded border border-terra/10">0000000000000000000000</p>
+      <button id="copy-alias-btn" class="btn-outline mt-5 w-full justify-center">Copiar alias</button>
     </div>
   </section>
 

@@ -1,5 +1,5 @@
 // Configuración de la cuenta regresiva
-const targetDate = new Date('2027-02-20T21:00:00-03:00').getTime();
+const targetDate = new Date('2027-03-06T20:00:00-03:00').getTime();
 
 function updateCountdown() {
   const now = Date.now();
@@ -61,7 +61,7 @@ const copyAliasBtn = document.getElementById('copy-alias-btn');
 
 if (copyAliasBtn) {
   copyAliasBtn.addEventListener('click', () => {
-    const aliasText = 'agus.eli.casamiento';
+    const aliasText = 'cbu.tarjeta.agus.eli';
     navigator.clipboard.writeText(aliasText)
       .then(() => {
         alert('Alias copiado: ' + aliasText + ' ✨');
@@ -71,3 +71,4 @@ if (copyAliasBtn) {
       });
   });
 }
+
