@@ -257,12 +257,12 @@
     <div class="max-w-md mx-auto grid grid-cols-2 gap-4">
       <div class="card-boho p-6 text-center">
         <p class="font-sans text-xs tracking-widest text-clay uppercase mb-1">Mayores</p>
-        <p class="font-serif text-2xl text-terradark font-semibold my-2">$ A confirmar</p>
+        <p id="price-adult-display" class="font-serif text-2xl text-terradark font-semibold my-2">$ A confirmar</p>
         <p class="font-sans text-[10px] text-ink/60 italic">Valor general</p>
       </div>
       <div class="card-boho p-6 text-center">
         <p class="font-sans text-xs tracking-widest text-clay uppercase mb-1">Menores</p>
-        <p class="font-serif text-2xl text-terradark font-semibold my-2">$ A confirmar</p>
+        <p id="price-child-display" class="font-serif text-2xl text-terradark font-semibold my-2">$ A confirmar</p>
         <p class="font-sans text-[10px] text-ink/60 italic">Niños (hasta 10 años)</p>
       </div>
     </div>
@@ -277,7 +277,16 @@
 
       <form id="rsvp-form" class="space-y-3 text-left">
         <input type="text" placeholder="Nombre y apellido" class="input-boho" required />
-        <input type="number" min="1" max="10" placeholder="Cantidad de personas" class="input-boho" required />
+        <div class="grid grid-cols-2 gap-3">
+          <div>
+            <label class="block font-sans text-[10px] tracking-widest text-clay uppercase mb-1 ml-1">Mayores</label>
+            <input type="number" id="adults-count" min="0" max="10" placeholder="0" value="0" class="input-boho" required />
+          </div>
+          <div>
+            <label class="block font-sans text-[10px] tracking-widest text-clay uppercase mb-1 ml-1">Menores</label>
+            <input type="number" id="kids-count" min="0" max="10" placeholder="0" value="0" class="input-boho" required />
+          </div>
+        </div>
         <button type="submit" class="btn-boho w-full justify-center mt-3">Enviar confirmación</button>
       </form>
       <p id="rsvp-msg" class="hidden font-serif italic text-sagedark mt-4">¡Gracias! Te esperamos 🌾</p>
@@ -298,6 +307,11 @@
       cuenta bancaria para realizar la transferencia:
     </p>
     <div class="card-boho p-6 max-w-sm mx-auto shadow-sm">
+      <div id="payment-total-section" class="mb-5 hidden">
+        <p class="font-sans text-xs tracking-widest text-clay uppercase mb-1">Total a transferir</p>
+        <p id="payment-total-amount" class="font-serif text-3xl text-terradark font-bold">$ 0</p>
+        <div class="w-full h-[1px] bg-terra/20 my-4"></div>
+      </div>
       <p class="font-sans text-xs tracking-widest text-clay uppercase mb-2">Alias de la tarjeta</p>
       <p class="font-serif text-xl text-terradark font-medium mb-4">cbu.tarjeta.agus.eli</p>
       <p class="font-sans text-xs tracking-widest text-clay uppercase mb-2">CBU</p>

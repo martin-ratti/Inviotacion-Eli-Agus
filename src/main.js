@@ -69,6 +69,42 @@ if (copyAliasBtn) {
       .catch((err) => {
         console.error('Error al copiar el alias: ', err);
       });
-  });
+    });
+}
+
+// Lógica de Precios y Total
+const PRICE_ADULT = 35000; // Valor placeholder
+const PRICE_CHILD = 15000; // Valor placeholder
+
+const priceAdultDisplay = document.getElementById('price-adult-display');
+const priceChildDisplay = document.getElementById('price-child-display');
+const adultsInput = document.getElementById('adults-count');
+const kidsInput = document.getElementById('kids-count');
+const paymentTotalSection = document.getElementById('payment-total-section');
+const paymentTotalAmount = document.getElementById('payment-total-amount');
+
+// Actualizar textos de precios
+if (priceAdultDisplay) priceAdultDisplay.textContent = `$ ${PRICE_ADULT.toLocaleString('es-AR')}`;
+if (priceChildDisplay) priceChildDisplay.textContent = `$ ${PRICE_CHILD.toLocaleString('es-AR')}`;
+
+function updateTotal() {
+  if (!adultsInput || !kidsInput || !paymentTotalAmount) return;
+  
+  const adults = parseInt(adultsInput.value) || 0;
+  const kids = parseInt(kidsInput.value) || 0;
+  
+  const total = (adults * PRICE_ADULT) + (kids * PRICE_CHILD);
+  
+  if (total > 0) {
+    paymentTotalAmount.textContent = `$ ${total.toLocaleString('es-AR')}`;
+    paymentTotalSection.classList.remove('hidden');
+  } else {
+    paymentTotalSection.classList.add('hidden');
+  }
+}
+
+if (adultsInput && kidsInput) {
+  adultsInput.addEventListener('input', updateTotal);
+  kidsInput.addEventListener('input', updateTotal);
 }
 
