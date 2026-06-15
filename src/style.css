@@ -15,11 +15,11 @@ body {
 
 /* Boho paper texture overlay */
 .paper {
-  background-image:
-    radial-gradient(rgba(192, 133, 102, 0.08) 1px, transparent 1px),
-    radial-gradient(rgba(156, 170, 139, 0.06) 1px, transparent 1px);
-  background-size: 28px 28px, 44px 44px;
-  background-position: 0 0, 14px 14px;
+  background-image: url('/fondo.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
 }
 
 .fade-in {
@@ -228,93 +228,3 @@ body {
   background-position: center;
   background-attachment: fixed;
 }
-
-/* Selector de Fondos Flotante */
-.bg-selector-panel {
-  position: fixed;
-  bottom: 24px;
-  left: 24px;
-  z-index: 50;
-  display: flex;
-  flex-direction: column-reverse;
-  align-items: flex-start;
-  gap: 8px;
-}
-
-.bg-selector-btn {
-  width: 48px;
-  height: 48px;
-  border-radius: 50%;
-  background: rgba(255, 250, 243, 0.85);
-  border: 1px solid rgba(192, 133, 102, 0.3);
-  color: #9c684f;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-  backdrop-filter: blur(8px);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  transition: transform 0.2s, background 0.2s;
-}
-
-.bg-selector-btn:hover {
-  transform: scale(1.05);
-  background: rgba(255, 250, 243, 1);
-}
-
-.bg-options-menu {
-  background: rgba(255, 250, 243, 0.9);
-  border: 1px solid rgba(192, 133, 102, 0.25);
-  border-radius: 16px;
-  padding: 12px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(12px);
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  opacity: 0;
-  transform: translateY(10px) scale(0.95);
-  pointer-events: none;
-  transition: opacity 0.25s ease, transform 0.25s ease;
-}
-
-.bg-options-menu.active {
-  opacity: 1;
-  transform: translateY(0) scale(1);
-  pointer-events: auto;
-}
-
-.bg-option-item {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  padding: 8px 12px;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: background 0.2s;
-  width: 190px;
-  text-align: left;
-}
-
-.bg-option-item:hover {
-  background: rgba(192, 133, 102, 0.1);
-}
-
-.bg-option-preview {
-  width: 28px;
-  height: 28px;
-  border-radius: 6px;
-  border: 1px solid rgba(192, 133, 102, 0.2);
-  background-size: cover;
-  background-position: center;
-  flex-shrink: 0;
-}
-
-.bg-option-name {
-  font-family: 'Lato', sans-serif;
-  font-size: 11px;
-  font-weight: 500;
-  color: #3b342d;
-  letter-spacing: 0.5px;
-}
-
