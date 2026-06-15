@@ -18,7 +18,7 @@ body {
   background-image: url('/fondo.jpg');
   background-size: cover;
   background-position: center;
-  background-attachment: fixed;
+  background-attachment: scroll;
   background-repeat: no-repeat;
 }
 
@@ -81,6 +81,7 @@ body {
   border-radius: 50% 0 50% 50%;
   background: rgba(212, 165, 154, 0.5);
   animation: fall linear infinite;
+  will-change: transform, opacity;
 }
 
 @keyframes fall {
@@ -208,23 +209,45 @@ body {
   background-image: url('/bg_embossed.png') !important;
   background-size: cover;
   background-position: center;
-  background-attachment: fixed;
+  background-attachment: scroll;
 }
 .bg-theme-2 {
   background-image: url('/bg_paper.png') !important;
   background-size: cover;
   background-position: center;
-  background-attachment: fixed;
+  background-attachment: scroll;
 }
 .bg-theme-3 {
   background-image: url('/bg_flowers_line.png') !important;
   background-size: cover;
   background-position: center;
-  background-attachment: fixed;
+  background-attachment: scroll;
 }
 .bg-theme-4 {
   background-image: url('/bg_watercolor.png') !important;
   background-size: cover;
   background-position: center;
-  background-attachment: fixed;
+  background-attachment: scroll;
+}
+
+/* Optimización de Rendimiento para Móviles */
+@media (min-width: 1024px) {
+  .paper,
+  .bg-theme-1,
+  .bg-theme-2,
+  .bg-theme-3,
+  .bg-theme-4 {
+    background-attachment: fixed !important;
+  }
+}
+
+@media (max-width: 1023px) {
+  .count-box {
+    background: rgba(255, 255, 255, 0.9) !important;
+    backdrop-filter: none !important;
+  }
+  .card-boho {
+    background: rgba(255, 250, 243, 0.92) !important;
+    backdrop-filter: none !important;
+  }
 }
