@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>Agustín & Eliana · Nos Casamos</title>
+  <meta name="description" content="Invitación de boda · Agustín & Eliana" />
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght=0,300;0,400;0,500;0,600;1,300;1,400&family=Dancing+Script:wght@400;500;600;700&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet" />
+
+  <!-- Estilos y Scripts modulares -->
+  <link rel="stylesheet" href="/src/style.css" />
+  <script type="module" src="/src/main.js"></script>
+</head>
+<body class="paper">
+
+  <!-- Floating petals -->
+  <div class="fixed inset-0 pointer-events-none z-0 overflow-hidden" aria-hidden="true">
+    <span class="petal" style="left: 8%; animation-duration: 14s; animation-delay: 0s;"></span>
+    <span class="petal" style="left: 22%; animation-duration: 18s; animation-delay: 3s; background: rgba(156,170,139,0.45);"></span>
+    <span class="petal" style="left: 45%; animation-duration: 16s; animation-delay: 6s;"></span>
+    <span class="petal" style="left: 68%; animation-duration: 20s; animation-delay: 1s; background: rgba(192,133,102,0.45);"></span>
+    <span class="petal" style="left: 85%; animation-duration: 15s; animation-delay: 8s;"></span>
+  </div>
+
+  <!-- ============ HERO ============ -->
+  <section class="relative min-h-screen flex flex-col items-center justify-center px-6 text-center overflow-hidden">
+    <!-- Decorative arch SVG -->
+    <svg class="arch arch-svg" viewBox="0 0 400 800" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M50 750 Q 50 100, 200 80 Q 350 100, 350 750" />
+      <path d="M70 750 Q 70 130, 200 110 Q 330 130, 330 750" />
+    </svg>
+
+    <!-- Pampas decoration top -->
+    <div class="absolute top-6 left-1/2 -translate-x-1/2 opacity-70">
+      <svg width="120" height="50" viewBox="0 0 120 50" xmlns="http://www.w3.org/2000/svg">
+        <g fill="none" stroke="#9caa8b" stroke-width="1" stroke-linecap="round">
+          <path d="M60 45 Q 55 25, 40 10" />
+          <path d="M60 45 Q 65 25, 80 10" />
+          <path d="M60 45 Q 50 30, 30 20" />
+          <path d="M60 45 Q 70 30, 90 20" />
+          <path d="M60 45 L 60 5" />
+        </g>
+        <g fill="#c08566" opacity="0.6">
+          <circle cx="40" cy="10" r="1.5" />
+          <circle cx="80" cy="10" r="1.5" />
+          <circle cx="30" cy="20" r="1.5" />
+          <circle cx="90" cy="20" r="1.5" />
+          <circle cx="60" cy="5" r="1.5" />
+        </g>
+      </svg>
+    </div>
+
+    <div class="relative z-10 fade-in pt-16">
+      <p class="font-sans text-xs tracking-[0.5em] text-clay uppercase mb-6">Nos Casamos</p>
+
+      <h1 class="name-script text-terradark text-7xl sm:text-8xl mb-2">Agustín</h1>
+      <div class="divider-leaf my-3 max-w-[200px] mx-auto">
+        <span class="font-serif italic text-sage text-lg">&</span>
+      </div>
+      <h1 class="name-script text-terradark text-7xl sm:text-8xl mb-10">Eliana</h1>
+
+      <p class="font-serif italic text-ink/70 text-lg mb-2">Sábado</p>
+      <p class="font-serif text-2xl tracking-[0.3em] text-ink uppercase mb-2">20 · Febrero · 2027</p>
+      <p class="font-sans text-xs tracking-[0.3em] text-clay uppercase">Arequito · Santa Fe</p>
+    </div>
+
+    <!-- Scroll hint -->
+    <div class="absolute bottom-8 left-1/2 -translate-x-1/2 z-10">
+      <div class="flex flex-col items-center gap-2 text-clay">
+        <span class="font-script text-sm">desliza</span>
+        <svg width="20" height="30" viewBox="0 0 20 30" class="animate-bounce">
+          <path d="M10 5 L10 22 M 4 16 L 10 22 L 16 16" stroke="#c08566" stroke-width="1.2" fill="none" stroke-linecap="round" />
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ COUNTDOWN ============ -->
+  <section class="relative px-6 py-20 text-center fade-in">
+    <p class="font-script text-3xl text-terradark mb-2">¡Falta poco!</p>
+    <p class="font-serif italic text-ink/60 mb-8">Cuenta regresiva</p>
+    <div class="grid grid-cols-4 gap-3 max-w-md mx-auto">
+      <div class="count-box rounded-xl py-4 px-2">
+        <div id="cd-days" class="font-serif text-3xl text-terradark">--</div>
+        <div class="font-sans text-[10px] tracking-widest text-clay uppercase mt-1">Días</div>
+      </div>
+      <div class="count-box rounded-xl py-4 px-2">
+        <div id="cd-hours" class="font-serif text-3xl text-terradark">--</div>
+        <div class="font-sans text-[10px] tracking-widest text-clay uppercase mt-1">Horas</div>
+      </div>
+      <div class="count-box rounded-xl py-4 px-2">
+        <div id="cd-mins" class="font-serif text-3xl text-terradark">--</div>
+        <div class="font-sans text-[10px] tracking-widest text-clay uppercase mt-1">Min</div>
+      </div>
+      <div class="count-box rounded-xl py-4 px-2">
+        <div id="cd-secs" class="font-serif text-3xl text-terradark">--</div>
+        <div class="font-sans text-[10px] tracking-widest text-clay uppercase mt-1">Seg</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ NUESTRA HISTORIA ============ -->
+  <section class="relative px-6 py-16 text-center fade-in">
+    <div class="divider-leaf max-w-xs mx-auto mb-6">
+      <svg width="22" height="22" viewBox="0 0 22 22"><path d="M11 2 Q 16 11, 11 20 Q 6 11, 11 2 Z" fill="#9caa8b" opacity="0.7"/></svg>
+    </div>
+    <h2 class="font-script text-4xl text-terradark mb-6">Nuestra historia</h2>
+    <p class="font-serif text-lg leading-relaxed text-ink/80 max-w-md mx-auto italic">
+      "Y un día, sin que lo planeáramos, supimos que éramos para siempre."
+    </p>
+    <p class="font-sans text-sm text-ink/70 mt-6 max-w-md mx-auto leading-relaxed">
+      Después de años juntos, queremos celebrar nuestro amor rodeados de las personas que más queremos. Y vos sos una de ellas.
+    </p>
+
+    <!-- Photo placeholder -->
+    <div class="mt-10 max-w-xs mx-auto">
+      <div class="photo-stub aspect-[3/4] rounded-2xl shadow-xl border border-terra/20 flex items-center justify-center">
+        <span class="font-script text-3xl text-cream drop-shadow">A & E</span>
+      </div>
+      <p class="font-sans text-[10px] tracking-widest text-clay/60 uppercase mt-2">Foto pareja · reemplazar</p>
+    </div>
+  </section>
+
+  <!-- ============ FIESTA ============ -->
+  <section class="relative px-6 py-16 fade-in">
+    <div class="text-center mb-12">
+      <p class="font-sans text-xs tracking-[0.4em] text-clay uppercase mb-2">Cuándo & Dónde</p>
+      <h2 class="font-script text-4xl text-terradark">La fiesta</h2>
+    </div>
+
+    <div class="max-w-md mx-auto">
+      <div class="card-boho p-8 text-center">
+        <svg width="48" height="48" viewBox="0 0 40 40" class="mx-auto mb-4">
+          <path d="M8 32 Q 20 28, 32 32 L 32 36 L 8 36 Z" fill="#9caa8b" opacity="0.5"/>
+          <path d="M14 28 Q 20 8, 26 28" fill="none" stroke="#c08566" stroke-width="1.2"/>
+          <path d="M16 16 L 24 16 M 18 22 L 22 22" stroke="#9c684f" stroke-width="1"/>
+        </svg>
+        <p class="font-sans text-xs tracking-[0.3em] text-clay uppercase mb-2">Te esperamos</p>
+        <h3 class="font-serif text-3xl text-ink mb-1">21:00 hs</h3>
+        <p class="font-serif italic text-ink/70 mb-4">Sábado 20 de Febrero</p>
+        <div class="divider-leaf max-w-[140px] mx-auto my-4">
+          <svg width="14" height="14" viewBox="0 0 22 22"><path d="M11 2 Q 16 11, 11 20 Q 6 11, 11 2 Z" fill="#9caa8b" opacity="0.7"/></svg>
+        </div>
+        <p class="font-serif text-xl text-terradark mb-2">Salón a confirmar</p>
+        <p class="font-sans text-sm text-ink/70 leading-relaxed">Arequito<br/>Santa Fe, Argentina</p>
+        <a href="https://maps.google.com/?q=Arequito+Santa+Fe" target="_blank" class="btn-outline mt-6">Ver mapa</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ RSVP ============ -->
+  <section class="relative px-6 py-16 fade-in">
+    <div class="card-boho p-8 max-w-md mx-auto text-center">
+      <p class="font-sans text-xs tracking-[0.4em] text-clay uppercase mb-2">Confirmá tu asistencia</p>
+      <h2 class="font-script text-4xl text-terradark mb-2">¿Venís?</h2>
+      <p class="font-serif italic text-ink/70 mb-6">Necesitamos saberlo antes del 1 de noviembre.</p>
+
+      <form id="rsvp-form" class="space-y-3 text-left">
+        <input type="text" placeholder="Nombre y apellido" class="input-boho" required />
+        <input type="number" min="1" max="10" placeholder="Cantidad de personas" class="input-boho" required />
+        <button type="submit" class="btn-boho w-full justify-center mt-3">Enviar confirmación</button>
+      </form>
+      <p id="rsvp-msg" class="hidden font-serif italic text-sagedark mt-4">¡Gracias! Te esperamos 🌾</p>
+    </div>
+  </section>
+
+  <!-- ============ REGALO ============ -->
+  <section class="relative px-6 py-16 text-center fade-in">
+    <div class="divider-leaf max-w-xs mx-auto mb-6">
+      <svg width="22" height="22" viewBox="0 0 22 22"><path d="M11 2 Q 16 11, 11 20 Q 6 11, 11 2 Z" fill="#9caa8b" opacity="0.7"/></svg>
+    </div>
+    <p class="font-sans text-xs tracking-[0.4em] text-clay uppercase mb-2">Regalo</p>
+    <h2 class="font-script text-4xl text-terradark mb-4">Si querés regalarnos algo…</h2>
+    <p class="font-serif italic text-ink/70 max-w-md mx-auto mb-8 leading-relaxed">
+      Tu presencia es nuestro mejor regalo. Pero si querés colaborar con nuestra luna de miel:
+    </p>
+    <div class="card-boho p-6 max-w-sm mx-auto">
+      <p class="font-sans text-xs tracking-widest text-clay uppercase mb-2">Alias</p>
+      <p class="font-serif text-2xl text-terradark mb-4">agus.eli.casamiento</p>
+      <p class="font-sans text-xs tracking-widest text-clay uppercase mb-2">CBU</p>
+      <p class="font-mono text-sm text-ink/80 break-all">0000000000000000000000</p>
+      <button id="copy-alias-btn" class="btn-outline mt-5">Copiar alias</button>
+    </div>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="relative px-6 py-16 text-center">
+    <div class="opacity-70 mb-6">
+      <svg width="80" height="40" viewBox="0 0 80 40" class="mx-auto">
+        <g fill="none" stroke="#9caa8b" stroke-width="1" stroke-linecap="round">
+          <path d="M40 35 Q 35 20, 25 8" />
+          <path d="M40 35 Q 45 20, 55 8" />
+          <path d="M40 35 L 40 5" />
+        </g>
+      </svg>
+    </div>
+    <p class="font-script text-3xl text-terradark mb-2">¡Gracias!</p>
+    <p class="font-serif italic text-ink/70 max-w-xs mx-auto">No podemos esperar a celebrar con vos.</p>
+    <p class="font-sans text-[10px] tracking-widest text-clay/60 uppercase mt-10">Agustín & Eliana · 2027</p>
+  </footer>
+
+</body>
+</html>
