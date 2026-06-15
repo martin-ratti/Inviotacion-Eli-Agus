@@ -18,9 +18,8 @@ export default {
         ink: '#3b342d',
       },
       fontFamily: {
-        serif: ['"Cormorant Garamond"', 'serif'],
-        script: ['"Dancing Script"', 'cursive'],
-        sans: ['Montserrat', 'sans-serif'],
+        serif: ['Vidaloka', 'serif'],
+        sans: ['Lato', 'sans-serif'],
       },
     },
   },
