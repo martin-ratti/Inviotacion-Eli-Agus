@@ -46,6 +46,35 @@ document.querySelectorAll('.fade-in').forEach((el) => {
 // Manejo del Formulario de RSVP
 const rsvpForm = document.getElementById('rsvp-form');
 const rsvpMsg = document.getElementById('rsvp-msg');
+const attendanceRadios = document.querySelectorAll('input[name="attendance"]');
+const rsvpDetails = document.getElementById('rsvp-details');
+const menuSelect = document.getElementById('menu-select');
+const specialMenuCountContainer = document.getElementById('special-menu-count-container');
+
+if (attendanceRadios.length > 0) {
+  attendanceRadios.forEach(radio => {
+    radio.addEventListener('change', (e) => {
+      if (e.target.value === 'yes') {
+        if (rsvpDetails) rsvpDetails.classList.remove('hidden');
+        if (typeof updateTotal === 'function') updateTotal();
+      } else {
+        if (rsvpDetails) rsvpDetails.classList.add('hidden');
+        const paymentTotalSection = document.getElementById('payment-total-section');
+        if (paymentTotalSection) paymentTotalSection.classList.add('hidden');
+      }
+    });
+  });
+}
+
+if (menuSelect && specialMenuCountContainer) {
+  menuSelect.addEventListener('change', (e) => {
+    if (e.target.value !== 'normal') {
+      specialMenuCountContainer.classList.remove('hidden');
+    } else {
+      specialMenuCountContainer.classList.add('hidden');
+    }
+  });
+}
 
 if (rsvpForm) {
   rsvpForm.addEventListener('submit', (event) => {
@@ -90,6 +119,12 @@ if (priceChildDisplay) priceChildDisplay.textContent = `$ ${PRICE_CHILD.toLocale
 
 function updateTotal() {
   if (!adultsInput || !kidsInput || !paymentTotalAmount) return;
+
+  const isAttending = document.querySelector('input[name="attendance"]:checked')?.value === 'yes';
+  if (!isAttending) {
+    if (paymentTotalSection) paymentTotalSection.classList.add('hidden');
+    return;
+  }
   
   const adults = parseInt(adultsInput.value) || 0;
   const kids = parseInt(kidsInput.value) || 0;

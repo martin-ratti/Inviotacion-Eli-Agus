@@ -173,79 +173,7 @@
     </div>
   </section>
 
-  <!-- ============ 6. SOLO EL MENÚ ============ -->
-  <section class="relative px-6 py-16 fade-in bg-cream/30">
-    <div class="text-center mb-12">
-      <p class="font-sans text-xs tracking-[0.4em] text-clay uppercase mb-2">Gastronomía</p>
-      <h2 class="font-serif text-3xl text-terradark">Menú del Evento</h2>
-    </div>
 
-    <div class="max-w-md mx-auto card-boho p-8 border border-terra/20 shadow-sm text-center">
-
-      <!-- Recepcion -->
-      <div class="mb-6">
-        <span class="font-sans text-[10px] tracking-widest text-clay uppercase font-semibold">Recepcion</span>
-        <h4 class="font-serif text-lg text-ink font-medium mt-1">Aperitivos y Bocados</h4>
-        <p class="font-sans text-xs text-ink/65 leading-relaxed">Barra de aperitivos, emepanaditas y choripanes.</p>
-      </div>
-
-      <div class="w-12 h-[1px] bg-terra/20 mx-auto mb-6"></div>
-      <!-- Entrada -->
-      <div class="mb-6">
-        <span class="font-sans text-[10px] tracking-widest text-clay uppercase font-semibold">Entrada</span>
-        <h4 class="font-serif text-lg text-ink font-medium mt-1">Tabla de fiambres</h4>
-        <p class="font-sans text-xs text-ink/65">Una fina selección de quesos y fiambres.</p>
-      </div>
-
-      <div class="w-12 h-[1px] bg-terra/20 mx-auto mb-6"></div>
-
-      <!-- Plato Principal -->
-      <div class="mb-6">
-        <span class="font-sans text-[10px] tracking-widest text-clay uppercase font-semibold">Plato Principal</span>
-        <h4 class="font-serif text-lg text-ink font-medium mt-1">Costillas vacunas</h4>
-        <p class="font-sans text-xs text-ink/65 leading-relaxed">Servidas con verduras asadas de estación y papas
-          noisette.</p>
-      </div>
-
-      <div class="w-12 h-[1px] bg-terra/20 mx-auto mb-6"></div>
-
-      <!-- Postre -->
-      <div class="mb-6">
-        <span class="font-sans text-[10px] tracking-widest text-clay uppercase font-semibold">Postre</span>
-        <h4 class="font-serif text-lg text-ink font-medium mt-1">Flan casero</h4>
-        <p class="font-sans text-xs text-ink/65">Acompañado con el clásico dulce de leche, crema chantilly y salsa de
-          caramelo.</p>
-      </div>
-
-      <div class="w-12 h-[1px] bg-terra/20 mx-auto mb-6"></div>
-
-      <!-- Brindis & Mesa Dulce -->
-      <div class="mb-6">
-        <span class="font-sans text-[10px] tracking-widest text-clay uppercase font-semibold">Brindis & Mesa
-          Dulce</span>
-        <h4 class="font-serif text-lg text-ink font-medium mt-1">Sidra 1888 & Lemon Champ</h4>
-        <p class="font-sans text-xs text-ink/65">Con mesa de dulces variada y amenities para la noche.</p>
-      </div>
-
-      <div class="w-12 h-[1px] bg-terra/20 mx-auto mb-6"></div>
-
-      <!-- Trasnoche -->
-      <div class="mb-6">
-        <span class="font-sans text-[10px] tracking-widest text-clay uppercase font-semibold">Trasnoches</span>
-        <h4 class="font-serif text-lg text-ink font-medium mt-1">Torta asada & Pizzas</h4>
-        <p class="font-sans text-xs text-ink/65">Torta asada rellena de jamón y queso, y variedad de pizzas caseras.</p>
-      </div>
-
-      <div class="w-12 h-[1px] bg-terra/20 mx-auto mb-6"></div>
-
-      <!-- Bebidas -->
-      <div>
-        <span class="font-sans text-[10px] tracking-widest text-clay uppercase font-semibold">Bebidas</span>
-        <h4 class="font-serif text-lg text-ink font-medium mt-1">Barra de tragos libre</h4>
-        <p class="font-sans text-xs text-ink/65">Coctelería clásica y tragos liberados durante todo el evento.</p>
-      </div>
-    </div>
-  </section>
 
   <!-- ============ 7. PRECIO DE LA TARJETA ============ -->
   <section class="relative px-6 py-16 fade-in">
@@ -277,17 +205,57 @@
 
       <form id="rsvp-form" class="space-y-3 text-left">
         <input type="text" placeholder="Nombre y apellido" class="input-boho" required />
-        <div class="grid grid-cols-2 gap-3">
-          <div>
-            <label class="block font-sans text-[10px] tracking-widest text-clay uppercase mb-1 ml-1">Mayores</label>
-            <input type="number" id="adults-count" min="0" max="10" placeholder="0" value="0" class="input-boho" required />
-          </div>
-          <div>
-            <label class="block font-sans text-[10px] tracking-widest text-clay uppercase mb-1 ml-1">Menores</label>
-            <input type="number" id="kids-count" min="0" max="10" placeholder="0" value="0" class="input-boho" required />
+        
+        <div class="space-y-2 mt-4">
+          <label class="block font-sans text-[10px] tracking-widest text-clay uppercase ml-1">¿Vas a poder asistir?</label>
+          <div class="flex flex-wrap items-center gap-4 ml-1">
+            <label class="flex items-center gap-2 font-sans text-sm text-ink/80 cursor-pointer">
+              <input type="radio" name="attendance" value="yes" class="accent-terradark w-4 h-4" required />
+              ¡Sí, asisto!
+            </label>
+            <label class="flex items-center gap-2 font-sans text-sm text-ink/80 cursor-pointer">
+              <input type="radio" name="attendance" value="no" class="accent-terradark w-4 h-4" required />
+              Lo siento, no asisto
+            </label>
           </div>
         </div>
-        <button type="submit" class="btn-boho w-full justify-center mt-3">Enviar confirmación</button>
+
+        <div id="rsvp-details" class="hidden space-y-3 mt-4 animate-dropdown">
+          <div class="grid grid-cols-2 gap-3">
+            <div>
+              <label class="block font-sans text-[10px] tracking-widest text-clay uppercase mb-1 ml-1">Mayores</label>
+              <input type="number" id="adults-count" min="0" max="10" placeholder="0" value="0" class="input-boho" />
+            </div>
+            <div>
+              <label class="block font-sans text-[10px] tracking-widest text-clay uppercase mb-1 ml-1">Menores</label>
+              <input type="number" id="kids-count" min="0" max="10" placeholder="0" value="0" class="input-boho" />
+            </div>
+          </div>
+
+          <div class="grid grid-cols-[1fr_auto] gap-3 items-end">
+            <div class="w-full">
+              <label class="block font-sans text-[10px] tracking-widest text-clay uppercase mb-1 ml-1">Menú</label>
+              <select id="menu-select" class="input-boho w-full bg-white cursor-pointer">
+                <option value="normal" selected>Sin restricciones</option>
+                <option value="celiaco">Menú Celíaco</option>
+                <option value="vegano">Menú Vegano</option>
+                <option value="vegetariano">Menú Vegetariano</option>
+              </select>
+            </div>
+
+            <div id="special-menu-count-container" class="hidden w-[70px]">
+              <label class="block font-sans text-[10px] tracking-widest text-clay uppercase mb-1 text-center w-full">Cant.</label>
+              <input type="number" id="special-menu-count" min="1" max="10" placeholder="1" value="1" class="input-boho px-2 text-center" />
+            </div>
+          </div>
+
+          <div>
+            <label class="block font-sans text-[10px] tracking-widest text-clay uppercase mb-1 ml-1">Aclaraciones</label>
+            <textarea id="rsvp-notes" placeholder="Ej: Somos 3 adultos pero 1 menú celíaco..." class="input-boho resize-none" rows="2"></textarea>
+          </div>
+        </div>
+
+        <button type="submit" class="btn-boho w-full justify-center mt-3">Enviar respuesta</button>
       </form>
       <p id="rsvp-msg" class="hidden font-serif italic text-sagedark mt-4">¡Gracias! Te esperamos 🌾</p>
     </div>
