@@ -77,12 +77,77 @@ if (menuSelect && specialMenuCountContainer) {
 }
 
 if (rsvpForm) {
-  rsvpForm.addEventListener('submit', (event) => {
+  rsvpForm.addEventListener('submit', async (event) => {
     event.preventDefault();
-    if (rsvpMsg) {
-      rsvpMsg.classList.remove('hidden');
+    
+    const btnSubmit = document.getElementById('btn-submit-rsvp');
+    const originalText = btnSubmit ? btnSubmit.textContent : 'Enviar respuesta';
+    if (btnSubmit) {
+      btnSubmit.textContent = 'Enviando...';
+      btnSubmit.disabled = true;
     }
-    // Opcional: Aquí se podría integrar un envío real a una API o base de datos.
+    
+    const nombre = document.getElementById('guest-name')?.value || '';
+    const asisteVal = document.querySelector('input[name="attendance"]:checked')?.value;
+    const asiste = asisteVal === 'yes' ? 'Sí' : 'No';
+    const mayores = parseInt(document.getElementById('adults-count')?.value) || 0;
+    const menores = parseInt(document.getElementById('kids-count')?.value) || 0;
+    const total = (mayores * PRICE_ADULT) + (menores * PRICE_CHILD);
+    
+    const menuEl = document.getElementById('menu-select');
+    let menu = '';
+    let cantMenuEspecial = '';
+    
+    if (asisteVal === 'yes' && menuEl) {
+       menu = menuEl.options[menuEl.selectedIndex].text;
+       if (menuEl.value !== 'normal') {
+          cantMenuEspecial = document.getElementById('special-menu-count')?.value || '';
+       }
+    }
+    
+    const aclaraciones = document.getElementById('rsvp-notes')?.value || '';
+    
+    const payload = {
+      nombre,
+      asiste,
+      mayores: asisteVal === 'yes' ? mayores : 0,
+      menores: asisteVal === 'yes' ? menores : 0,
+      total: asisteVal === 'yes' ? total : 0,
+      menu,
+      cantMenuEspecial,
+      aclaraciones
+    };
+
+    const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxprt3uP2Psq6DfIo0K9gdoiqQW33SD4CeFLqvnqkLkjKsWGoI7MUPpUpfw6mjrGdw/exec';
+
+    try {
+      await fetch(SCRIPT_URL, {
+        method: 'POST',
+        body: JSON.stringify(payload)
+      });
+      
+      if (rsvpMsg) {
+        rsvpMsg.classList.remove('hidden');
+        if (asisteVal === 'no') {
+          rsvpMsg.textContent = '¡Qué pena! Gracias por avisar.';
+        } else {
+          rsvpMsg.textContent = '¡Gracias! Te esperamos 🌾';
+        }
+      }
+      
+      rsvpForm.reset();
+      updateTotal();
+      if (rsvpDetails) rsvpDetails.classList.add('hidden');
+      
+    } catch (error) {
+      alert('Hubo un error al enviar. Por favor, intenta nuevamente.');
+      console.error('Error enviando RSVP:', error);
+    } finally {
+      if (btnSubmit) {
+        btnSubmit.textContent = originalText;
+        btnSubmit.disabled = false;
+      }
+    }
   });
 }
 

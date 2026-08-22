@@ -204,7 +204,7 @@
       <p class="font-serif italic text-ink/70 mb-6">Agradecemos confirmar tu asistencia antes del 1 de noviembre.</p>
 
       <form id="rsvp-form" class="space-y-3 text-left">
-        <input type="text" placeholder="Nombre y apellido" class="input-boho" required />
+        <input type="text" id="guest-name" placeholder="Nombre y apellido" class="input-boho" required />
         
         <div class="space-y-2 mt-4">
           <label class="block font-sans text-[10px] tracking-widest text-clay uppercase ml-1">¿Vas a poder asistir?</label>
@@ -255,7 +255,7 @@
           </div>
         </div>
 
-        <button type="submit" class="btn-boho w-full justify-center mt-3">Enviar respuesta</button>
+        <button type="submit" id="btn-submit-rsvp" class="btn-boho w-full justify-center mt-3">Enviar respuesta</button>
       </form>
       <p id="rsvp-msg" class="hidden font-serif italic text-sagedark mt-4">¡Gracias! Te esperamos 🌾</p>
     </div>
