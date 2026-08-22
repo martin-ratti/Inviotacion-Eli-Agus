@@ -45,7 +45,6 @@ document.querySelectorAll('.fade-in').forEach((el) => {
 
 // Manejo del Formulario de RSVP
 const rsvpForm = document.getElementById('rsvp-form');
-const rsvpMsg = document.getElementById('rsvp-msg');
 const attendanceRadios = document.querySelectorAll('input[name="attendance"]');
 const rsvpDetails = document.getElementById('rsvp-details');
 const menuSelect = document.getElementById('menu-select');
@@ -126,13 +125,22 @@ if (rsvpForm) {
         body: JSON.stringify(payload)
       });
       
-      if (rsvpMsg) {
-        rsvpMsg.classList.remove('hidden');
+      const toast = document.getElementById('toast-success');
+      const toastMsg = document.getElementById('toast-message');
+      
+      if (toast && toastMsg) {
         if (asisteVal === 'no') {
-          rsvpMsg.textContent = '¡Qué pena! Gracias por avisar.';
+          toastMsg.textContent = '¡Qué pena! Gracias por avisar.';
         } else {
-          rsvpMsg.textContent = '¡Gracias! Te esperamos 🌾';
+          toastMsg.textContent = '¡Respuesta enviada! Te esperamos 🌾';
         }
+        toast.classList.remove('translate-y-20', 'opacity-0');
+        toast.classList.add('translate-y-0', 'opacity-100');
+        
+        setTimeout(() => {
+          toast.classList.remove('translate-y-0', 'opacity-100');
+          toast.classList.add('translate-y-20', 'opacity-0');
+        }, 4000);
       }
       
       rsvpForm.reset();
