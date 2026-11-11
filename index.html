@@ -5,12 +5,12 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   <title>Eliana & Agustín · Nos Casamos</title>
-  <meta name="description" content="Invitación de boda · Agustín & Eliana" />
+  <meta name="description" content="Invitación de boda · Eliana & Agustín" />
 
   <!-- Open Graph / WhatsApp Preview -->
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://inviotacion-eli-agus.vercel.app/" />
-  <meta property="og:title" content="Agustín & Eliana · Nos Casamos" />
+  <meta property="og:title" content="Eliana & Agustín · Nos Casamos" />
   <meta property="og:description" content="Nos encantaría que nos acompañes a celebrar este gran día." />
   <meta property="og:image" content="https://inviotacion-eli-agus.vercel.app/preview-wpp.jpg" />
   <meta property="og:image:width" content="1200" />
@@ -19,7 +19,7 @@
   <!-- Twitter / x (fallback) -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:url" content="https://inviotacion-eli-agus.vercel.app/" />
-  <meta name="twitter:title" content="Agustín & Eliana · Nos Casamos" />
+  <meta name="twitter:title" content="Eliana & Agustín · Nos Casamos" />
   <meta name="twitter:description" content="Nos encantaría que nos acompañes a celebrar este gran día." />
   <meta name="twitter:image" content="https://inviotacion-eli-agus.vercel.app/preview-wpp.jpg" />
 
@@ -50,40 +50,44 @@
 
   <!-- ============ 1. HERO ("Nos casamos") ============ -->
   <section
-    class="relative min-h-screen min-h-[100dvh] flex flex-col items-center justify-center px-6 text-center overflow-hidden">
-
-    <!-- Pampas decoration top -->
-    <div class="absolute top-4 sm:top-6 left-1/2 -translate-x-1/2 opacity-70">
-      <svg width="120" height="50" viewBox="0 0 120 50" xmlns="http://www.w3.org/2000/svg">
-        <g fill="none" stroke="#9caa8b" stroke-width="1" stroke-linecap="round">
-          <path d="M60 45 Q 55 25, 40 10" />
-          <path d="M60 45 Q 65 25, 80 10" />
-          <path d="M60 45 Q 50 30, 30 20" />
-          <path d="M60 45 Q 70 30, 90 20" />
-          <path d="M60 45 L 60 5" />
-        </g>
-        <g fill="#c08566" opacity="0.6">
-          <circle cx="40" cy="10" r="1.5" />
-          <circle cx="80" cy="10" r="1.5" />
-          <circle cx="30" cy="20" r="1.5" />
-          <circle cx="90" cy="20" r="1.5" />
-          <circle cx="60" cy="5" r="1.5" />
-        </g>
-      </svg>
-    </div>
+    class="relative min-h-[100svh] min-h-[100dvh] min-h-screen flex flex-col items-center justify-between px-6 pt-5 pb-3 sm:pt-8 sm:pb-6 text-center overflow-hidden">
 
     <div
-      class="relative z-10 w-full max-w-lg flex-1 flex flex-col justify-evenly py-6 sm:py-8 max-h-[660px] sm:max-h-[760px] my-auto">
+      class="relative z-10 w-full max-w-lg flex-1 flex flex-col justify-evenly py-2 sm:py-6 max-h-[640px] sm:max-h-[720px] my-auto">
+      
+      <!-- Bloque 1: Adorno + Nos Casamos -->
       <div>
-        <p class="font-sans text-xs tracking-[0.5em] text-clay uppercase mb-3 sm:mb-4 fade-in">Nos Casamos</p>
+        <div class="opacity-70 mb-2 sm:mb-3 fade-in">
+          <svg width="115" height="48" viewBox="0 0 120 50" class="mx-auto" xmlns="http://www.w3.org/2000/svg">
+            <g fill="none" stroke="#9caa8b" stroke-width="1" stroke-linecap="round">
+              <path d="M60 45 Q 55 25, 40 10" />
+              <path d="M60 45 Q 65 25, 80 10" />
+              <path d="M60 45 Q 50 30, 30 20" />
+              <path d="M60 45 Q 70 30, 90 20" />
+              <path d="M60 45 L 60 5" />
+            </g>
+            <g fill="#c08566" opacity="0.6">
+              <circle cx="40" cy="10" r="1.5" />
+              <circle cx="80" cy="10" r="1.5" />
+              <circle cx="30" cy="20" r="1.5" />
+              <circle cx="90" cy="20" r="1.5" />
+              <circle cx="60" cy="5" r="1.5" />
+            </g>
+          </svg>
+        </div>
+        <p class="font-sans text-xs tracking-[0.5em] text-clay uppercase fade-in">Nos Casamos</p>
+      </div>
 
+      <!-- Bloque 2: Nombres -->
+      <div>
         <h1 class="name-script text-terradark text-6xl sm:text-7xl mb-1 sm:mb-2 fade-in delay-100">Eliana</h1>
         <div class="divider-leaf my-2 sm:my-3 max-w-[200px] mx-auto fade-in delay-200">
-          <span class="font-serif italic text-sage text-lg">&</span>
+          <span class="font-serif italic text-sage text-base sm:text-lg">&</span>
         </div>
         <h1 class="name-script text-terradark text-6xl sm:text-7xl fade-in delay-300">Agustín</h1>
       </div>
 
+      <!-- Bloque 3: Frase -->
       <div class="px-2">
         <p
           class="font-sans text-sm sm:text-base text-ink/75 max-w-xs sm:max-w-md mx-auto leading-relaxed fade-in delay-300">
@@ -93,27 +97,28 @@
         </p>
       </div>
 
+      <!-- Bloque 4: Fechas y Lugar -->
       <div class="fade-in delay-500">
-        <p class="font-serif italic text-ink/70 text-lg mb-2">Sábado</p>
-        <p class="font-serif text-2xl tracking-[0.3em] text-ink uppercase mb-2">06 · Marzo · 2027</p>
+        <p class="font-serif italic text-ink/70 text-base sm:text-lg mb-1.5 sm:mb-2">Sábado</p>
+        <p class="font-serif text-2xl tracking-[0.3em] text-ink uppercase mb-1.5 sm:mb-2">06 · Marzo · 2027</p>
         <p class="font-sans text-xs tracking-[0.3em] text-clay uppercase">Arequito · Santa Fe</p>
       </div>
     </div>
 
     <!-- Scroll hint -->
-    <div class="absolute bottom-4 sm:bottom-7 left-1/2 -translate-x-1/2 z-10">
-      <div class="flex flex-col items-center gap-2 text-clay">
-        <span class="font-serif italic text-sm">desliza</span>
-        <svg width="20" height="30" viewBox="0 0 20 30" class="animate-bounce">
+    <a href="#historia" class="relative z-10 pt-2 pb-2 sm:pb-4 shrink-0 cursor-pointer block hover:opacity-80 transition-opacity">
+      <div class="flex flex-col items-center gap-1.5 text-clay">
+        <span class="font-serif italic text-xs sm:text-sm">desliza</span>
+        <svg width="18" height="26" viewBox="0 0 20 30" class="animate-bounce">
           <path d="M10 5 L10 22 M 4 16 L 10 22 L 16 16" stroke="#c08566" stroke-width="1.2" fill="none"
             stroke-linecap="round" />
         </svg>
       </div>
-    </div>
+    </a>
   </section>
 
   <!-- ============ 2. NUESTRA HISTORIA ============ -->
-  <section class="relative px-6 py-16 text-center">
+  <section id="historia" class="relative px-6 py-16 text-center">
     <div class="divider-leaf max-w-xs mx-auto mb-6 fade-in">
       <svg width="22" height="22" viewBox="0 0 22 22">
         <path d="M11 2 Q 16 11, 11 20 Q 6 11, 11 2 Z" fill="#9caa8b" opacity="0.7" />
@@ -447,13 +452,25 @@
 
   <!-- Toast Notification -->
   <div id="toast-success"
-    class="fixed top-5 left-1/2 -translate-x-1/2 z-50 transform -translate-y-20 opacity-0 transition-all duration-500 flex items-center gap-3 bg-white/95 px-6 py-4 rounded-xl shadow-xl border border-terra/20 backdrop-blur-md pointer-events-none">
-    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#9caa8b" stroke-width="2" stroke-linecap="round"
-      stroke-linejoin="round">
-      <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
-      <polyline points="22 4 12 14.01 9 11.01"></polyline>
-    </svg>
-    <p id="toast-message" class="font-serif text-terradark text-sm">¡Gracias por responder!</p>
+    class="fixed top-5 left-1/2 -translate-x-1/2 z-50 transform -translate-y-24 opacity-0 transition-all duration-400 flex items-center gap-3 bg-white/95 px-5 py-3.5 sm:px-6 sm:py-4 rounded-2xl shadow-xl border border-terra/20 backdrop-blur-md pointer-events-none max-w-[calc(100vw-32px)] sm:max-w-md w-max">
+    <div id="toast-icon-wrapper" class="shrink-0 flex items-center justify-center">
+      <svg id="toast-icon-success" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#9caa8b" stroke-width="2" stroke-linecap="round"
+        stroke-linejoin="round">
+        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+        <polyline points="22 4 12 14.01 9 11.01"></polyline>
+      </svg>
+      <svg id="toast-icon-error" class="hidden" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#c06666" stroke-width="2" stroke-linecap="round"
+        stroke-linejoin="round">
+        <circle cx="12" cy="12" r="10"></circle>
+        <line x1="12" y1="8" x2="12" y2="12"></line>
+        <line x1="12" y1="16" x2="12.01" y2="16"></line>
+      </svg>
+    </div>
+    <div class="flex flex-col text-left justify-center min-w-0">
+      <span id="toast-title" class="font-serif text-terradark text-sm leading-snug whitespace-nowrap"></span>
+      <span id="toast-subtitle" class="font-serif text-terradark text-sm leading-snug whitespace-nowrap"></span>
+    </div>
+    <p id="toast-message" class="hidden"></p>
   </div>
   <!-- Confetti script -->
   <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>

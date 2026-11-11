@@ -140,9 +140,9 @@ if (rsvpForm) {
       });
       
       if (asisteVal === 'no') {
-        showToast('¡Qué pena! Gracias por avisar.');
+        showToast('¡Qué pena!', 'Gracias por avisar.');
       } else {
-        showToast('¡Respuesta enviada! Te esperamos.');
+        showToast('¡Respuesta enviada!', 'Te esperamos.');
         
         // Lanzar confetti si asiste
         if (typeof confetti === 'function') {
@@ -188,7 +188,7 @@ if (rsvpForm) {
         }
       }
     } catch (error) {
-      showToast('Hubo un error al enviar. Por favor, intenta nuevamente.');
+      showToast('Hubo un error al enviar.', 'Por favor, intenta nuevamente.', 'error');
       console.error('Error enviando RSVP:', error);
     } finally {
       if (btnSubmit) {
@@ -199,23 +199,65 @@ if (rsvpForm) {
   });
 }
 
-// Función para mostrar el toast
-function showToast(message) {
+// Función para mostrar el toast estandarizado
+function showToast(title, subtitle = '', type = 'success') {
   const toast = document.getElementById('toast-success');
+  const toastTitle = document.getElementById('toast-title');
+  const toastSubtitle = document.getElementById('toast-subtitle');
   const toastMsg = document.getElementById('toast-message');
+  const iconSuccess = document.getElementById('toast-icon-success');
+  const iconError = document.getElementById('toast-icon-error');
   
-  if (toast && toastMsg) {
-    toastMsg.textContent = message;
-    toast.classList.remove('-translate-y-20', 'opacity-0');
-    toast.classList.add('translate-y-0', 'opacity-100');
-    
-    if (toast.hideTimeout) clearTimeout(toast.hideTimeout);
-    
-    toast.hideTimeout = setTimeout(() => {
-      toast.classList.remove('translate-y-0', 'opacity-100');
-      toast.classList.add('-translate-y-20', 'opacity-0');
-    }, 4000);
+  if (!toast) return;
+
+  let mainTitle = title;
+  let subText = subtitle;
+
+  // Soporte para paso de string único con salto de línea (\n)
+  if (typeof title === 'string' && !subtitle) {
+    if (title.includes('\n')) {
+      const parts = title.split('\n');
+      mainTitle = parts[0];
+      subText = parts.slice(1).join('\n');
+    }
   }
+
+  if (toastTitle) {
+    toastTitle.textContent = mainTitle || '';
+  }
+  if (toastSubtitle) {
+    if (subText) {
+      toastSubtitle.textContent = subText;
+      toastSubtitle.classList.remove('hidden');
+    } else {
+      toastSubtitle.textContent = '';
+      toastSubtitle.classList.add('hidden');
+    }
+  }
+  if (toastMsg) {
+    toastMsg.textContent = subText ? `${mainTitle} ${subText}` : (mainTitle || '');
+  }
+
+  // Manejo de iconos según el tipo (éxito o error)
+  if (iconSuccess && iconError) {
+    if (type === 'error') {
+      iconSuccess.classList.add('hidden');
+      iconError.classList.remove('hidden');
+    } else {
+      iconSuccess.classList.remove('hidden');
+      iconError.classList.add('hidden');
+    }
+  }
+
+  toast.classList.remove('-translate-y-24', 'opacity-0');
+  toast.classList.add('translate-y-0', 'opacity-100');
+
+  if (toast.hideTimeout) clearTimeout(toast.hideTimeout);
+
+  toast.hideTimeout = setTimeout(() => {
+    toast.classList.remove('translate-y-0', 'opacity-100');
+    toast.classList.add('-translate-y-24', 'opacity-0');
+  }, 4000);
 }
 
 // Copiar alias y CVU al portapapeles con microinteracción visual y háptica
@@ -246,9 +288,9 @@ function triggerButtonFeedback(btn, successLabel) {
   }, 2200);
 }
 
-function copyToClipboard(text, successToastMsg, btn, successBtnLabel = '¡Copiado!') {
+function copyToClipboard(text, toastTitle, toastSubtitle, btn, successBtnLabel = '¡Copiado!') {
   const onSuccess = () => {
-    showToast(successToastMsg);
+    showToast(toastTitle, toastSubtitle);
     if (btn) triggerButtonFeedback(btn, successBtnLabel);
   };
 
@@ -282,7 +324,7 @@ if (copyAliasBtn) {
   copyAliasBtn.addEventListener('click', () => {
     const aliasEl = document.getElementById('account-alias');
     const aliasText = aliasEl ? aliasEl.textContent.trim() : 'noscasamos.eliyagus';
-    copyToClipboard(aliasText, 'Alias copiado: ' + aliasText, copyAliasBtn, '¡Copiado!');
+    copyToClipboard(aliasText, 'Alias copiado:', aliasText, copyAliasBtn, '¡Copiado!');
   });
 }
 
@@ -290,7 +332,7 @@ if (copyCvuBtn) {
   copyCvuBtn.addEventListener('click', () => {
     const cvuEl = document.getElementById('account-cvu');
     const cvuText = cvuEl ? cvuEl.textContent.trim() : '0000003100001253125432';
-    copyToClipboard(cvuText, 'CVU copiado: ' + cvuText, copyCvuBtn, '¡Copiado!');
+    copyToClipboard(cvuText, 'CVU copiado:', cvuText, copyCvuBtn, '¡Copiado!');
   });
 }
 
