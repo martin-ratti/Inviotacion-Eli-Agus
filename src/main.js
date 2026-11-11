@@ -25,6 +25,15 @@ function updateCountdown() {
 updateCountdown();
 setInterval(updateCountdown, 1000);
 
+// Feedback háptico global para todos los botones del sitio al tocarlos
+document.querySelectorAll('.btn-boho, .btn-outline').forEach(btn => {
+  btn.addEventListener('click', () => {
+    if (navigator.vibrate) {
+      try { navigator.vibrate(25); } catch (_) {}
+    }
+  });
+});
+
 // Observador para animaciones al hacer scroll (Fade-in)
 const observerOptions = {
   threshold: 0.15,
@@ -209,20 +218,80 @@ function showToast(message) {
   }
 }
 
-// Copiar alias al portapapeles
+// Copiar alias y CVU al portapapeles con microinteracción visual y háptica
 const copyAliasBtn = document.getElementById('copy-alias-btn');
+const copyCvuBtn = document.getElementById('copy-cvu-btn');
+
+function triggerButtonFeedback(btn, successLabel) {
+  if (!btn || btn.dataset.isCopying === 'true') return;
+  btn.dataset.isCopying = 'true';
+
+  const originalContent = btn.innerHTML;
+  btn.classList.add('btn-copied');
+  btn.innerHTML = `
+    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="inline-block shrink-0">
+      <polyline points="20 6 9 17 4 12"></polyline>
+    </svg>
+    <span>${successLabel}</span>
+  `;
+
+  if (navigator.vibrate) {
+    try { navigator.vibrate(35); } catch (_) {}
+  }
+
+  setTimeout(() => {
+    btn.classList.remove('btn-copied');
+    btn.innerHTML = originalContent;
+    delete btn.dataset.isCopying;
+  }, 2200);
+}
+
+function copyToClipboard(text, successToastMsg, btn, successBtnLabel = '¡Copiado!') {
+  const onSuccess = () => {
+    showToast(successToastMsg);
+    if (btn) triggerButtonFeedback(btn, successBtnLabel);
+  };
+
+  if (navigator.clipboard && window.isSecureContext) {
+    navigator.clipboard.writeText(text)
+      .then(onSuccess)
+      .catch(() => fallbackCopy(text, onSuccess));
+  } else {
+    fallbackCopy(text, onSuccess);
+  }
+}
+
+function fallbackCopy(text, callback) {
+  const textarea = document.createElement('textarea');
+  textarea.value = text;
+  textarea.style.position = 'fixed';
+  textarea.style.opacity = '0';
+  document.body.appendChild(textarea);
+  textarea.focus();
+  textarea.select();
+  try {
+    document.execCommand('copy');
+    if (callback) callback();
+  } catch (err) {
+    console.error('Error al copiar: ', err);
+  }
+  document.body.removeChild(textarea);
+}
 
 if (copyAliasBtn) {
   copyAliasBtn.addEventListener('click', () => {
-    const aliasText = 'cbu.tarjeta.agus.eli';
-    navigator.clipboard.writeText(aliasText)
-      .then(() => {
-        showToast('Alias copiado: ' + aliasText);
-      })
-      .catch((err) => {
-        console.error('Error al copiar el alias: ', err);
-      });
-    });
+    const aliasEl = document.getElementById('account-alias');
+    const aliasText = aliasEl ? aliasEl.textContent.trim() : 'noscasamos.eliyagus';
+    copyToClipboard(aliasText, 'Alias copiado: ' + aliasText, copyAliasBtn, '¡Copiado!');
+  });
+}
+
+if (copyCvuBtn) {
+  copyCvuBtn.addEventListener('click', () => {
+    const cvuEl = document.getElementById('account-cvu');
+    const cvuText = cvuEl ? cvuEl.textContent.trim() : '0000003100001253125432';
+    copyToClipboard(cvuText, 'CVU copiado: ' + cvuText, copyCvuBtn, '¡Copiado!');
+  });
 }
 
 // Lógica de Precios y Total

@@ -107,7 +107,7 @@ body {
   }
 }
 
-/* Buttons */
+/* Buttons & Microinteractions */
 .btn-boho {
   display: inline-flex;
   align-items: center;
@@ -122,13 +122,22 @@ body {
   text-transform: uppercase;
   font-size: 12px;
   box-shadow: 0 8px 24px -10px rgba(156, 104, 79, 0.55);
-  transition: transform .2s ease, background .2s ease;
+  transition: transform .2s cubic-bezier(0.4, 0, 0.2, 1), background .2s ease, box-shadow .2s ease;
+  cursor: pointer;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
 }
 
-.btn-boho:hover,
-.btn-boho:active {
+.btn-boho:hover {
   background: #9c684f;
   transform: translateY(-2px);
+  box-shadow: 0 12px 28px -8px rgba(156, 104, 79, 0.65);
+}
+
+.btn-boho:active {
+  background: #83543d;
+  transform: scale(0.96);
+  box-shadow: 0 4px 12px -4px rgba(156, 104, 79, 0.4);
 }
 
 .btn-outline {
@@ -145,6 +154,38 @@ body {
   text-transform: uppercase;
   font-size: 11px;
   background: transparent;
+  transition: transform .2s cubic-bezier(0.4, 0, 0.2, 1), background .2s ease, border-color .2s ease, color .2s ease, box-shadow .2s ease;
+  cursor: pointer;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.btn-outline:hover {
+  background: rgba(192, 133, 102, 0.12);
+  border-color: #9c684f;
+  color: #83543d;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px -6px rgba(192, 133, 102, 0.35);
+}
+
+.btn-outline:active {
+  transform: scale(0.95);
+  background: rgba(192, 133, 102, 0.2);
+}
+
+/* Microinteracción estado Copiado */
+@keyframes buttonPop {
+  0% { transform: scale(0.93); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+.btn-copied {
+  background-color: #9caa8b !important;
+  border-color: #9caa8b !important;
+  color: #ffffff !important;
+  animation: buttonPop 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+  box-shadow: 0 6px 20px -6px rgba(156, 170, 139, 0.6) !important;
 }
 
 /* Timeline */

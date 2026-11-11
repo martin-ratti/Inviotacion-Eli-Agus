@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-  <title>Agustín & Eliana · Nos Casamos</title>
+  <title>Eliana & Agustín · Nos Casamos</title>
   <meta name="description" content="Invitación de boda · Agustín & Eliana" />
 
   <!-- Open Graph / WhatsApp Preview -->
@@ -49,10 +49,11 @@
   </div>
 
   <!-- ============ 1. HERO ("Nos casamos") ============ -->
-  <section class="relative min-h-screen flex flex-col items-center justify-center px-6 text-center overflow-hidden">
+  <section
+    class="relative min-h-screen min-h-[100dvh] flex flex-col items-center justify-center px-6 text-center overflow-hidden">
 
     <!-- Pampas decoration top -->
-    <div class="absolute top-6 left-1/2 -translate-x-1/2 opacity-70">
+    <div class="absolute top-4 sm:top-6 left-1/2 -translate-x-1/2 opacity-70">
       <svg width="120" height="50" viewBox="0 0 120 50" xmlns="http://www.w3.org/2000/svg">
         <g fill="none" stroke="#9caa8b" stroke-width="1" stroke-linecap="round">
           <path d="M60 45 Q 55 25, 40 10" />
@@ -71,14 +72,26 @@
       </svg>
     </div>
 
-    <div class="relative z-10 pt-16">
-      <p class="font-sans text-xs tracking-[0.5em] text-clay uppercase mb-6 fade-in">Nos Casamos</p>
+    <div
+      class="relative z-10 w-full max-w-lg flex-1 flex flex-col justify-evenly py-6 sm:py-8 max-h-[660px] sm:max-h-[760px] my-auto">
+      <div>
+        <p class="font-sans text-xs tracking-[0.5em] text-clay uppercase mb-3 sm:mb-4 fade-in">Nos Casamos</p>
 
-      <h1 class="name-script text-terradark text-6xl sm:text-7xl mb-2 fade-in delay-100">Agustín</h1>
-      <div class="divider-leaf my-3 max-w-[200px] mx-auto fade-in delay-200">
-        <span class="font-serif italic text-sage text-lg">&</span>
+        <h1 class="name-script text-terradark text-6xl sm:text-7xl mb-1 sm:mb-2 fade-in delay-100">Eliana</h1>
+        <div class="divider-leaf my-2 sm:my-3 max-w-[200px] mx-auto fade-in delay-200">
+          <span class="font-serif italic text-sage text-lg">&</span>
+        </div>
+        <h1 class="name-script text-terradark text-6xl sm:text-7xl fade-in delay-300">Agustín</h1>
       </div>
-      <h1 class="name-script text-terradark text-6xl sm:text-7xl mb-10 fade-in delay-300">Eliana</h1>
+
+      <div class="px-2">
+        <p
+          class="font-sans text-sm sm:text-base text-ink/75 max-w-xs sm:max-w-md mx-auto leading-relaxed fade-in delay-300">
+          Después de años juntos, queremos celebrar nuestro amor rodeados de las personas que más queremos. Y vos sos
+          una de
+          ellas.
+        </p>
+      </div>
 
       <div class="fade-in delay-500">
         <p class="font-serif italic text-ink/70 text-lg mb-2">Sábado</p>
@@ -88,7 +101,7 @@
     </div>
 
     <!-- Scroll hint -->
-    <div class="absolute bottom-8 left-1/2 -translate-x-1/2 z-10">
+    <div class="absolute bottom-4 sm:bottom-7 left-1/2 -translate-x-1/2 z-10">
       <div class="flex flex-col items-center gap-2 text-clay">
         <span class="font-serif italic text-sm">desliza</span>
         <svg width="20" height="30" viewBox="0 0 20 30" class="animate-bounce">
@@ -106,13 +119,9 @@
         <path d="M11 2 Q 16 11, 11 20 Q 6 11, 11 2 Z" fill="#9caa8b" opacity="0.7" />
       </svg>
     </div>
-    <h2 class="font-serif text-3xl text-terradark mb-6 fade-in delay-100">Nuestra historia</h2>
+    <h2 class="font-serif text-3xl text-terradark mb-6 fade-in delay-100">Nosotros</h2>
     <p class="font-serif text-lg leading-relaxed text-ink/80 max-w-md mx-auto italic fade-in delay-200">
-      "Y un día, sin que lo planeáramos, supimos que éramos para siempre."
-    </p>
-    <p class="font-sans text-sm text-ink/70 mt-6 max-w-md mx-auto leading-relaxed fade-in delay-300">
-      Después de años juntos, queremos celebrar nuestro amor rodeados de las personas que más queremos. Y vos sos una de
-      ellas.
+      "El comienzo de nuestro para siempre"
     </p>
 
     <!-- Photo placeholder -->
@@ -296,8 +305,7 @@
   <!-- ============ 7. PRECIO DE LA TARJETA ============ -->
   <section class="relative px-6 py-16 fade-in">
     <div class="text-center mb-8">
-      <p class="font-sans text-xs tracking-[0.4em] text-clay uppercase mb-2">Valor de la tarjeta</p>
-      <h2 class="font-serif text-3xl text-terradark">Tarjetas & Valores</h2>
+      <h2 class="font-serif text-3xl text-terradark">Valor de la tarjeta</h2>
     </div>
 
     <div class="max-w-md mx-auto grid grid-cols-2 gap-4">
@@ -319,7 +327,7 @@
     <div class="card-boho p-8 max-w-md mx-auto text-center shadow-sm">
       <p class="font-sans text-xs tracking-[0.4em] text-clay uppercase mb-2">Confirmá tu asistencia</p>
       <h2 class="font-serif text-3xl text-terradark mb-2">¿Venís?</h2>
-      <p class="font-serif italic text-ink/70 mb-6">Agradecemos confirmar tu asistencia antes del 1 de noviembre.</p>
+      <p class="font-serif italic text-ink/70 mb-6">Agradecemos confirmar tu asistencia antes de Febrero.</p>
 
       <form id="rsvp-form" class="space-y-3 text-left">
         <input type="text" id="guest-name" placeholder="Nombre y apellido" class="input-boho" required />
@@ -395,8 +403,8 @@
     <h2 class="font-serif text-3xl text-terradark mb-4">Confirmación de Pago</h2>
     <p class="font-serif italic text-ink/70 max-w-md mx-auto mb-8 leading-relaxed">
       Para hacer efectivo el valor de la tarjeta y ayudarnos con la organización del evento, te facilitamos nuestra
-      cuenta bancaria para realizar la transferencia. <br><br><strong>Una vez realizado el pago, por favor enviá el
-        comprobante a Agus o a Eli.</strong>
+      cuenta bancaria para realizar la transferencia. <br><br><strong>Una vez realizado el pago, por favor envianos el
+        comprobante por WhatsApp.</strong>
     </p>
     <div class="card-boho p-6 max-w-sm mx-auto shadow-sm">
       <div id="payment-total-section" class="mb-5 hidden">
@@ -405,11 +413,18 @@
         <div class="w-full h-[1px] bg-terra/20 my-4"></div>
       </div>
       <p class="font-sans text-xs tracking-widest text-clay uppercase mb-2">Alias de la tarjeta</p>
-      <p class="font-serif text-xl text-terradark font-medium mb-4">cbu.tarjeta.agus.eli</p>
-      <p class="font-sans text-xs tracking-widest text-clay uppercase mb-2">CBU</p>
-      <p class="font-mono text-xs text-ink/80 break-all bg-cream/50 p-2 rounded border border-terra/10">
-        0000000000000000000000</p>
-      <button id="copy-alias-btn" class="btn-outline mt-5 w-full justify-center">Copiar alias</button>
+      <p id="account-alias" class="font-serif text-xl text-terradark font-medium mb-4 select-all">noscasamos.eliyagus
+      </p>
+      <p class="font-sans text-xs tracking-widest text-clay uppercase mb-2">CVU</p>
+      <p id="account-cvu"
+        class="font-mono text-xs text-ink/80 break-all bg-cream/50 p-2 rounded border border-terra/10 select-all">
+        0000003100001253125432</p>
+      <div class="grid grid-cols-2 gap-3 mt-5">
+        <button id="copy-alias-btn" class="btn-outline justify-center !px-3 !py-2.5 !text-xs !tracking-wider">Copiar
+          alias</button>
+        <button id="copy-cvu-btn" class="btn-outline justify-center !px-3 !py-2.5 !text-xs !tracking-wider">Copiar
+          CVU</button>
+      </div>
     </div>
   </section>
 
@@ -425,8 +440,8 @@
       </svg>
     </div>
     <p class="font-serif text-2xl text-terradark mb-2">¡Gracias!</p>
-    <p class="font-serif italic text-ink/70 max-w-xs mx-auto">No podemos esperar a celebrar con vos.</p>
-    <p class="font-sans text-[10px] tracking-widest text-clay/60 uppercase mt-10">Agustín & Eliana · 2027</p>
+    <p class="font-serif italic text-ink/70 max-w-xs mx-auto">Es un honor que nos acompañes en este gran día.</p>
+    <p class="font-sans text-[10px] tracking-widest text-clay/60 uppercase mt-10">Eliana & Agustín · 2027</p>
   </footer>
 
   <!-- Toast Notification -->
