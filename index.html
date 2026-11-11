@@ -50,11 +50,11 @@
 
   <!-- ============ 1. HERO ("Nos casamos") ============ -->
   <section
-    class="relative min-h-[100svh] min-h-[100dvh] min-h-screen flex flex-col items-center justify-between px-6 pt-5 pb-3 sm:pt-8 sm:pb-6 text-center overflow-hidden">
+    class="relative h-[100svh] min-h-[580px] flex flex-col items-center justify-center px-6 pt-8 pb-7 sm:pt-10 sm:pb-8 text-center overflow-hidden">
 
     <div
-      class="relative z-10 w-full max-w-lg flex-1 flex flex-col justify-evenly py-2 sm:py-6 max-h-[640px] sm:max-h-[720px] my-auto">
-      
+      class="relative z-10 w-full max-w-lg h-full max-h-[740px] flex flex-col justify-between items-center mx-auto">
+
       <!-- Bloque 1: Adorno + Nos Casamos -->
       <div>
         <div class="opacity-70 mb-2 sm:mb-3 fade-in">
@@ -103,18 +103,19 @@
         <p class="font-serif text-2xl tracking-[0.3em] text-ink uppercase mb-1.5 sm:mb-2">06 · Marzo · 2027</p>
         <p class="font-sans text-xs tracking-[0.3em] text-clay uppercase">Arequito · Santa Fe</p>
       </div>
-    </div>
 
-    <!-- Scroll hint -->
-    <a href="#historia" class="relative z-10 pt-2 pb-2 sm:pb-4 shrink-0 cursor-pointer block hover:opacity-80 transition-opacity">
-      <div class="flex flex-col items-center gap-1.5 text-clay">
-        <span class="font-serif italic text-xs sm:text-sm">desliza</span>
-        <svg width="18" height="26" viewBox="0 0 20 30" class="animate-bounce">
-          <path d="M10 5 L10 22 M 4 16 L 10 22 L 16 16" stroke="#c08566" stroke-width="1.2" fill="none"
-            stroke-linecap="round" />
-        </svg>
-      </div>
-    </a>
+      <!-- Bloque 5: Scroll hint -->
+      <a href="#historia"
+        class="relative z-10 shrink-0 cursor-pointer block hover:opacity-80 transition-opacity">
+        <div class="flex flex-col items-center gap-1.5 text-clay">
+          <span class="font-serif italic text-xs sm:text-sm">desliza</span>
+          <svg width="18" height="26" viewBox="0 0 20 30" class="animate-bounce">
+            <path d="M10 5 L10 22 M 4 16 L 10 22 L 16 16" stroke="#c08566" stroke-width="1.2" fill="none"
+              stroke-linecap="round" />
+          </svg>
+        </div>
+      </a>
+    </div>
   </section>
 
   <!-- ============ 2. NUESTRA HISTORIA ============ -->
@@ -364,29 +365,48 @@
             </div>
           </div>
 
-          <div class="grid grid-cols-[1fr_auto] gap-3 items-end">
-            <div class="w-full">
-              <label class="block font-sans text-[10px] tracking-widest text-clay uppercase mb-1 ml-1">Menú</label>
-              <select id="menu-select" class="input-boho w-full bg-white cursor-pointer h-[48px]">
-                <option value="normal" selected>Sin restricciones</option>
-                <option value="celiaco">Menú Celíaco</option>
-                <option value="vegano">Menú Vegano</option>
-                <option value="vegetariano">Menú Vegetariano</option>
-              </select>
+          <!-- Sección de Menús y Preferencias -->
+          <div class="space-y-2 mt-4">
+            <div class="flex items-center justify-between ml-1">
+              <label class="block font-sans text-[10px] tracking-widest text-clay uppercase">Menú y preferencias</label>
+              <span id="menu-count-summary" class="hidden font-sans text-[11px] font-medium transition-colors"></span>
             </div>
 
-            <div id="special-menu-count-container" class="hidden w-[70px]">
-              <label
-                class="block font-sans text-[10px] tracking-widest text-clay uppercase mb-1 text-center w-full">Cant.</label>
-              <input type="number" id="special-menu-count" min="1" max="10" placeholder="1" value="1"
-                class="input-boho px-2 text-center h-[48px]" />
+            <!-- Contenedor dinámico de filas de menús -->
+            <div id="menu-rows-container" class="space-y-2.5">
+              <!-- Se inicializa dinámicamente -->
+            </div>
+
+            <!-- Botón para agregar otro tipo de menú si hay más de 1 persona -->
+            <div id="add-menu-container" class="hidden pt-1">
+              <button type="button" id="btn-add-menu"
+                class="btn-outline !py-2 !px-3.5 !text-xs !border-dashed flex items-center gap-1.5 hover:border-terradark transition-all">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="12" y1="5" x2="12" y2="19"></line>
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                </svg>
+                <span>Agregar otra preferencia de menú</span>
+              </button>
+            </div>
+
+            <!-- Mensaje de aviso de discrepancia entre personas y menús -->
+            <div id="menu-error-message"
+              class="hidden p-2.5 rounded-xl bg-rose/20 border border-terra/30 text-xs font-sans text-terradark flex items-start gap-2">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round" class="shrink-0 mt-0.5">
+                <circle cx="12" cy="12" r="10"></circle>
+                <line x1="12" y1="8" x2="12" y2="12"></line>
+                <line x1="12" y1="16" x2="12.01" y2="16"></line>
+              </svg>
+              <span id="menu-error-text"></span>
             </div>
           </div>
 
           <div>
             <label
               class="block font-sans text-[10px] tracking-widest text-clay uppercase mb-1 ml-1">Aclaraciones</label>
-            <textarea id="rsvp-notes" placeholder="Ej: Somos 3 adultos pero 1 menú celíaco..."
+            <textarea id="rsvp-notes" placeholder="Ej: Somos 3 adultos y 1 menú celíaco menor..."
               class="input-boho resize-none" rows="2"></textarea>
           </div>
         </div>
@@ -454,13 +474,13 @@
   <div id="toast-success"
     class="fixed top-5 left-1/2 -translate-x-1/2 z-50 transform -translate-y-24 opacity-0 transition-all duration-400 flex items-center gap-3 bg-white/95 px-5 py-3.5 sm:px-6 sm:py-4 rounded-2xl shadow-xl border border-terra/20 backdrop-blur-md pointer-events-none max-w-[calc(100vw-32px)] sm:max-w-md w-max">
     <div id="toast-icon-wrapper" class="shrink-0 flex items-center justify-center">
-      <svg id="toast-icon-success" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#9caa8b" stroke-width="2" stroke-linecap="round"
-        stroke-linejoin="round">
+      <svg id="toast-icon-success" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#9caa8b"
+        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
         <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
         <polyline points="22 4 12 14.01 9 11.01"></polyline>
       </svg>
-      <svg id="toast-icon-error" class="hidden" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#c06666" stroke-width="2" stroke-linecap="round"
-        stroke-linejoin="round">
+      <svg id="toast-icon-error" class="hidden" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#c06666"
+        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
         <circle cx="12" cy="12" r="10"></circle>
         <line x1="12" y1="8" x2="12" y2="12"></line>
         <line x1="12" y1="16" x2="12.01" y2="16"></line>
